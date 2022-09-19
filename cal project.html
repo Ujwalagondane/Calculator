@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+    <style>
+        .input-screen{
+            height: 70px;
+            width: 100%;
+            background-color: rgb(99, 83, 83);
+            border-radius: 25px;
+            margin-bottom: 10px;
+            color: white;
+            font-size: 50px;
+            font-style: ;
+        }
+
+        .container{
+            background-color: black;
+            width: 400px;
+            padding: 30px;
+            border-radius: 15%;
+            
+
+            }
+
+        .row{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .btn{
+            height: 70px;
+            width: 100px;
+            background-color: rgb(78,73,73);
+            margin: 3px;
+            border-radius: 45%;
+            color: white;
+            font-size: 40px;
+            box-shadow: 0px 0px 2px rgb(80, 79, 79);
+        }
+
+        .btn:hover{
+            cursor: pointer;
+            box-shadow: 0px 3px 5px rgb(240, 231, 231);
+            transition: 0.5s;
+        }
+
+        .btn-long{
+            width: 200px;
+            height: 70px;
+            background-color: rgb(78, 73, 73);
+            margin: 3px;
+            border-radius: 40%;
+            color: white;
+            font-size: 40px;
+            box-shadow: 0px 0px 2px rgb(80,79,79);
+        }
+
+        .btn-long:hover{
+            cursor: pointer;
+            box-shadow: 0px 3px 5px rgb(240, 231, 231);
+            transition: 0.5s;
+        }
+         
+        .bg-grey{
+            background-color: rgb(158, 143, 143);
+        }
+
+        .bg-orange{
+            background-color: orange;
+        }
+
+        .brand{
+            color: darkslategrey;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="brand">CASIO</span>
+        <div class="row">
+            <input type="text" id="input" class="input-screen"/>
+        </div>
+        <div class="row">
+            <button class="btn bg-grey">C</button>
+            <button class="btn bg-grey">+/-</button>
+            <button class="btn bg-grey">TIP</button>
+            <button class="btn bg-orange">÷</button>
+        </div>
+
+        <div class="row">
+            <button class="btn">7</button>
+            <button class="btn">8</button>
+            <button class="btn">9</button>
+            <button class="btn bg-orange">x</button>
+        </div>
+
+        <div class="row">
+            <button class="btn">4</button>
+            <button class="btn">5</button>
+            <button class="btn">6</button>
+            <button class="btn bg-orange">-</button>
+        </div>
+
+        <div class="row">
+            <button class="btn">1</button>
+            <button class="btn">2</button>
+            <button class="btn">3</button>
+            <button class="btn bg-orange">+</button>
+        </div>
+
+        <div class="row">
+            <button class="btn-long">0</button>
+            <button class="btn">.</button>
+            <button class="btn bg-orange">=</button>
+        </div>
+    </div>
+</body>
+</html>
