@@ -2,6 +2,28 @@
 <html lang="en">
 <head>
     <title>Calculator</title>
+    <script>
+        function pressButton(buttonValue){
+            let calText= document.querySelector(".input-screen").value+ buttonValue + "";
+            document.querySelector(".input-screen").value= calText;
+        }
+
+        function calculate(){
+            let calText= document.querySelector(".input-screen").value;
+            document.querySelector(".input-screen").value= eval(calText);
+        }
+
+        function clearScreen(){
+            document.querySelector(".input-screen").value= "";
+        }
+
+        function back(){
+            let value =  document.querySelector(".input-screen").value;
+            document.querySelector(".input-screen").value= value.substr(0, value.length-1) ;
+        }
+
+        
+    </script>
     <style>
         .input-screen{
             height: 70px;
@@ -19,9 +41,7 @@
             width: 400px;
             padding: 30px;
             border-radius: 15%;
-            
-
-            }
+        }
 
         .row{
             display: flex;
@@ -51,7 +71,7 @@
             height: 70px;
             background-color: rgb(78, 73, 73);
             margin: 3px;
-            border-radius: 40%;
+            border-radius: 45%;
             color: white;
             font-size: 40px;
             box-shadow: 0px 0px 2px rgb(80,79,79);
@@ -68,13 +88,19 @@
         }
 
         .bg-orange{
-            background-color: orange;
+            background-color: rgb(240, 111, 25);
         }
 
         .brand{
             color: darkslategrey;
             font-size: 20px;
             font-weight: bold;
+        }
+
+        .img{
+            height: 70px;
+            width: 55px;
+            margin-right: 8px;
         }
     </style>
 </head>
@@ -85,37 +111,39 @@
             <input type="text" id="input" class="input-screen"/>
         </div>
         <div class="row">
-            <button class="btn bg-grey">C</button>
-            <button class="btn bg-grey">+/-</button>
-            <button class="btn bg-grey">TIP</button>
-            <button class="btn bg-orange">÷</button>
+            <button class="btn bg-orange" onClick="clearScreen()">C</button>
+            <button class="btn bg-orange" onClick="pressButton('%')">%</button>
+            <button class="btn bg-orange" onClick="pressButton('/')">/</button>
+            <button class="btn bg-orange" onClick="pressButton('*')">x</button>
         </div>
 
         <div class="row">
-            <button class="btn">7</button>
-            <button class="btn">8</button>
-            <button class="btn">9</button>
-            <button class="btn bg-orange">x</button>
+            <button class="btn" onClick="pressButton(7)">7</button>
+            <button class="btn" onClick="pressButton(8)">8</button>
+            <button class="btn" onClick="pressButton(9)">9</button>
+            <button class="btn bg-orange" onClick="pressButton('-')">-</button>
         </div>
 
         <div class="row">
-            <button class="btn">4</button>
-            <button class="btn">5</button>
-            <button class="btn">6</button>
-            <button class="btn bg-orange">-</button>
+            <button class="btn" onClick="pressButton(4)">4</button>
+            <button class="btn" onClick="pressButton(5)">5</button>
+            <button class="btn" onClick="pressButton(6)">6</button>
+            <button class="btn bg-orange" onClick="pressButton('+')">+</button>
         </div>
 
         <div class="row">
-            <button class="btn">1</button>
-            <button class="btn">2</button>
-            <button class="btn">3</button>
-            <button class="btn bg-orange">+</button>
+            <button class="btn" onClick="pressButton(1)">1</button>
+            <button class="btn" onClick="pressButton(2)">2</button>
+            <button class="btn" onClick="pressButton(3)">3</button>
+            <button class="btn bg-orange" >
+                <img src="backspace.png"/ class="img" onClick="back()">
+            </button>
         </div>
 
         <div class="row">
-            <button class="btn-long">0</button>
-            <button class="btn">.</button>
-            <button class="btn bg-orange">=</button>
+            <button class="btn-long" onClick="pressButton(0)">0</button>
+            <button class="btn" onClick="pressButton('.')">.</button>
+            <button class="btn bg-orange" onClick="calculate()">=</button>
         </div>
     </div>
 </body>
